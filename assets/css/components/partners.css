@@ -1,0 +1,113 @@
+.partners {
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 2rem;
+    position: relative;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.partners-content {
+    max-width: 1200px;
+    width: 100%;
+}
+
+.partners h2 {
+    font-size: 3rem;
+    margin-bottom: 3rem;
+    text-align: center;
+    text-shadow: 
+        0 0 10px rgba(76, 0, 255, 0.7),
+        0 0 20px rgba(76, 0, 255, 0.5);
+}
+
+.partners-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 3rem;
+    padding: 2rem;
+}
+
+.partner-card {
+    background: rgba(76, 0, 255, 0.05);
+    border: 1px solid rgba(76, 0, 255, 0.2);
+    padding: 2rem;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(5px);
+    min-height: 200px;
+}
+
+.partner-card::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, 
+        rgba(76, 0, 255, 0.3),
+        rgba(76, 0, 255, 0.1),
+        rgba(76, 0, 255, 0.3));
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.partner-card:hover {
+    transform: translateY(-5px);
+}
+
+.partner-card:hover::before {
+    opacity: 1;
+}
+
+.partner-logo {
+    width: 120px;
+    height: 120px;
+    background: rgba(76, 0, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.partner-logo::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(76, 0, 255, 0.2),
+        transparent
+    );
+    animation: shimmer 2s infinite;
+}
+
+.partner-name {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.partner-type {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin-top: 0.5rem;
+}

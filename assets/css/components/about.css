@@ -1,0 +1,92 @@
+.about {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 2rem;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 1s ease-out;
+    position: relative;
+    z-index: 1;
+}
+
+.about.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.about-content {
+    max-width: 1200px;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+}
+
+.about h2 {
+    font-size: 3rem;
+    margin-bottom: 3rem;
+    text-align: center;
+    text-shadow: 
+        0 0 10px rgba(76, 0, 255, 0.7),
+        0 0 20px rgba(76, 0, 255, 0.5);
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 1rem;
+}
+
+.about-card {
+    background: rgba(76, 0, 255, 0.1);
+    border: 1px solid rgba(76, 0, 255, 0.3);
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(5px);
+}
+
+.about-card::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, 
+        rgba(76, 0, 255, 0.5),
+        rgba(76, 0, 255, 0.2),
+        rgba(76, 0, 255, 0.5));
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.about-card:hover {
+    transform: translateY(-5px);
+}
+
+.about-card:hover::before {
+    opacity: 1;
+}
+
+.about-card i {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: rgba(76, 0, 255, 0.8);
+}
+
+.about-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.about-card p {
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+}
